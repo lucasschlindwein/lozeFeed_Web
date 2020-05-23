@@ -19,29 +19,29 @@ class Feed extends Component{
     return (
       <section id='post-list'>
         {this.state.feed.map(post => (
-          <article>
-          <header>
-            <div className='user-info'>
-              <span>{post.author}</span>
-              <span className='place'>{post.place}</span>
-            </div>
-          </header>
+          <article key={post._id}>
+            <header>
+              <div className='user-info'>
+                <span>{post.author}</span>
+                <span className='place'>{post.place}</span>
+              </div>
+            </header>
 
-          <img src={`http>//localhost:3001/files/${post.image}`} alt='' />
+            <img src={`http://localhost:3001/files/${post.image}`} alt='' />
 
-          <footer>
-            <div className='actions'>
-              <img src={like} alt='' />
-            </div>
+            <footer>
+              <div className='actions'>
+                <img src={like} alt='' />
+              </div>
 
-            <strong>{post.likes} curtidas</strong>
+              <strong>{post.likes} curtidas</strong>
 
-            <p>
-              {post.description}
-              <span>{post.hashtags}</span>
-            </p>
-          </footer>
-        </article>
+              <p>
+                {post.description}
+                <span>{post.hashtags}</span>
+              </p>
+            </footer>
+          </article>
         ))}
       </section>
     );
