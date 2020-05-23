@@ -31,7 +31,7 @@ class Feed extends Component{
 
             <footer>
               <div className='actions'>
-                <img src={like} alt='' />
+                <img src={like} alt='Like' />
               </div>
 
               <strong>{post.likes} curtidas</strong>
