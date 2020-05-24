@@ -1,4 +1,4 @@
-# BillyVet
+# LozeFeed_WEB
 
 :rocket: web front end of the LozeFeed application
 
