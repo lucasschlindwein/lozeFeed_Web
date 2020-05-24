@@ -15,6 +15,12 @@ class Feed extends Component{
     this.setState({feed: response.data});
   }
 
+  async handleLike(postId) {
+    await api.post(`posts/${postId}/like`);
+
+    this.props.history.push('/');
+  }
+
   render(){
     return (
       <section id='post-list'>
@@ -31,7 +37,7 @@ class Feed extends Component{
 
             <footer>
               <div className='actions'>
-                <img src={like} alt='Like' />
+                <img src={like} alt='Like' onClick={this.handleLike(post._id)}/>
               </div>
 
               <strong>{post.likes} curtidas</strong>
