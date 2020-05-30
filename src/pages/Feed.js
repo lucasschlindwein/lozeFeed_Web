@@ -3,7 +3,6 @@ import api from '../services/api';
 import io from 'socket.io-client';
 
 import './Feed.css';
-
 import like from '../assets/like.svg';
 
 class Feed extends Component{
@@ -19,7 +18,8 @@ class Feed extends Component{
   }
 
   registerToSocket = () => {
-    const socket = io('http://localhost:3001');
+    // const socket = io('http://localhost:3001');
+    const socket = io(process.env.REACT_APP_API_URL);
 
     socket.on('post', newPost => {
       this.setState({ feed: [newPost, ...this.state.feed] });
