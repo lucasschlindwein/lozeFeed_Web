@@ -8,7 +8,8 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      <Routes />
+      <Routes />clear
+      
     </BrowserRouter>
   );
 }
